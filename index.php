@@ -9,6 +9,9 @@ error_reporting(E_ALL);
 // Require autoload file
 require_once ('vendor/autoload.php');
 
+// Start a session
+session_start();
+
 // Instantiate Fat-Fre
 $f3 = Base::instance();
 
