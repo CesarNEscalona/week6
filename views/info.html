@@ -9,7 +9,28 @@
 </head>
 <body>
     <h1>{{ @title }}</h1>
-    <p>User logged in as {{ @username}} using {{ @password }}</p>
+    <p>User logged in as {{ @username }} using {{ @password }}</p>
     <p>Celsius: {{ round((@temp-32) * (5.0/9.0), 2) }} degrees</p>
+    <p>My favorite color is : {{ @color }}</p>
+    <p>Radius: {{ 2 * 3.14 * @radius }} </p>
+
+    <p>Here's my fruits array: </p>
+    <repeat group= "{{ @fruits }}" value="{{ @fruit }}">
+        <p>{{ trim(@fruit) }}</p>
+    </repeat>
+
+    <h2>Dessert Options</h2>
+    <repeat group="{{ @desserts }}" key="{{ @key }}" value="{{ @value }}">
+        <p><input type="checkbox" value="{{ @key }}">{{ @value }} </p>
+    </repeat>
+
+    <check if="{{ @preferredCustomer }}">
+        <strong>Thank you for being a preferred customer!</strong><br>
+    </check>
+
+    <check if="{{ @lastLogin > strtotime('-1 month') }}">
+        <true>Welcome back!</true>
+        <false>It's been a while!</false>
+    </check>
 </body>
 </html>

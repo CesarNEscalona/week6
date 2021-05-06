@@ -22,6 +22,21 @@ $f3->route('GET /', function($f3){
     $f3->set('password', sha1('Password01'));
     $f3->set('title', 'Working with Templates');
     $f3->set('temp', '67');
+    $f3->set('color', 'Purple');
+    $f3->set('radius', '10');
+    $f3->set('fruits', array('apple', 'orange', 'banana'));
+
+    // defining an associative array
+    $f3->set('desserts', array(
+        'chocolate' => 'Chocolate Mousse',
+        'vanilla' => 'Vanilla Custard',
+        'strawberry' => "Strawberry Shortcake"
+    ));
+
+    $f3->set('preferredCustomer', 'true');
+    $f3->set('lastLogin', strtotime('-1 week'));
+
+
 
     // Display the home page
     $view = new Template();
